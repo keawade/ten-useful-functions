@@ -17,7 +17,7 @@ function capitalize(string, all){
 }
 
 function kebabCase(string){
-  return string.toLowerCase().replace(/ /g, '-');
+  return string.toLowerCase().replace(/[^a-zA-Z\d\s]/g, '').replace(/\s/g, '-');
 }
 
 function sentenceCase(string){
@@ -103,7 +103,7 @@ function isAnswer(attempt){
 var hitchhikers = ['Ford Prefect', 'Zaphod Beeblebrox', 'Oolon Colluphid', 'Arthur Dent', 'Trisha McMillan', 'Marvin'];
 var numbers = range(0,50,14);
 var strings = ['Leetzorz', 'This is a cool test sentence that is longer than it needs to be.', "Don't Panic", 'Peter Piper picked a peck of pickled peppers.'];
-
+/*
 console.log(largest(1,2) + " is bigger than " + smallest(1,2) + ".");
 
 if(numbers.map(isAnswer)){
@@ -112,5 +112,7 @@ if(numbers.map(isAnswer)){
 
 console.log(hitchhikers.map(camelCase));
 console.log(hitchhikers.map(sentenceCase));
-
 console.log(strings.map(leet))
+
+*/
+console.log(strings.map(kebabCase));
